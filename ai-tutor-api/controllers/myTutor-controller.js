@@ -7,9 +7,7 @@ const { OPENAI_API_KEY } = process.env
 const openai = new OpenAI({ apiKey: OPENAI_API_KEY});
 
 const myTutor = async (req, res) => {
-  console.log(req.data)
   console.log(req.body)
-  console.log(req.data?.message)
   console.log(req.body?.message)
 
   const message = req?.data?.testMessage
