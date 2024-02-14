@@ -7,21 +7,20 @@ const { OPENAI_API_KEY } = process.env
 const openai = new OpenAI({ apiKey: OPENAI_API_KEY});
 
 const myTutor = async (req, res) => {
-  console.log(req.body)
-  console.log(req.body?.message)
 
-  const message = req?.data?.testMessage
+  const message = req.body?.message
+  const prompt = "You are a Spanish speaker from Spain and work as a professional language coach. Assisting non-Spanish speakers to practice speaking Spanish, learn Spanish grammar and vocabulary, and to study Spanish."
 
   const completion = await openai.chat.completions.create({
     messages: [
       {
         role: "system",
-        content: "You are a helpful assistant designed to output JSON.",
+        content: prompt
       },
-      { role: "user", content: "How do you say this is difficult in Spanish?" },
+      { role: "user", content: message },
     ],
     model: "gpt-3.5-turbo-0125",
-    response_format: { type: "json_object" },
+    
   });
   console.log(completion.choices[0].message.content);
 
