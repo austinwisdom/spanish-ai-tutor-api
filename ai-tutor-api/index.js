@@ -14,7 +14,7 @@ app.use("/", homePageRoutes)
 app.use("/my-tutor", myTutorRoutes)
 // app.use("/test")
 
-const { PORT } = process.env
+const { PORT } = process.env || 3000
 
 app.listen(PORT, () => {
     console.log(`Listening on ${PORT}`)
