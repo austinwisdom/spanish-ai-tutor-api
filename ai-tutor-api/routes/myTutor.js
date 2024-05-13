@@ -4,6 +4,8 @@ const  axios  =  require('axios');
 
 const myTutorController = require("../controllers/myTutor-controller")
 
+router.route("/").get(myTutorController.helloTutor)
+
 router.route("/es").post(myTutorController.mySpanishTutor)
 router.route("/en").post(myTutorController.myEnglishTutor)
 router.route("/de").post(myTutorController.myGermanTutor)

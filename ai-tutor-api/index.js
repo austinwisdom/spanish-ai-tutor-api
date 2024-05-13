@@ -9,9 +9,11 @@ app.use(bodyParser.json())
 
 const homePageRoutes = require("./routes/homePage.js")
 const myTutorRoutes = require("./routes/myTutor")
+const conversationRoutes = require("./routes/conversation.js")
 
 app.use("/", homePageRoutes)
 app.use("/my-tutor", myTutorRoutes)
+app.use("/conversation", conversationRoutes)
 // app.use("/test")
 
 const { PORT } = process.env || 3000

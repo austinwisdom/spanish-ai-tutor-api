@@ -13,6 +13,11 @@ const tutorPrompts = [
   {id: "pt", tutorPrompt: "You are a female Brazilian Portuguese language teacher named Isabela. You answer any questions that your student asks you. Be helpful and friendly. Your student speaks English so take opportunities to explain key similarities and differences between Brazilian Portuguese and English as necessary or relevant."},
 ]
 
+const helloTutor = (_req, res) => {
+  res.status(200).json("Welcome to tutor")
+}
+
+
 // Spanish language tutor for lessons
 const mySpanishTutor = async (req, res) => {
 
@@ -230,5 +235,11 @@ const myPortugueseTutor = async (req, res) => {
 }
 
 module.exports = {
-  mySpanishTutor, myGermanTutor, myEnglishTutor, myFrenchTutor, myJapaneseTutor, myPortugueseTutor
+  mySpanishTutor, 
+  myGermanTutor, 
+  myEnglishTutor, 
+  myFrenchTutor, 
+  myJapaneseTutor, 
+  myPortugueseTutor,
+  helloTutor
 }
